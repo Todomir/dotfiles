@@ -134,8 +134,13 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	documentation = {
-		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	window = {
+		completion = {
+			border = "rounded",
+		},
+		documentation = {
+			border = "rounded",
+		},
 	},
 	experimental = {
 		ghost_text = false,
