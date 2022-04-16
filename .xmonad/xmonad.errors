@@ -1,0 +1,9 @@
+
+xmonad.hs:35:1: error:
+    Could not find module ‘Xmonad.Hooks.InsertPosition’
+    Perhaps you meant
+      XMonad.Hooks.InsertPosition (from xmonad-contrib-0.16)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+35 | import Xmonad.Hooks.InsertPosition
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
