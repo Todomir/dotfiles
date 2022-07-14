@@ -1,0 +1,38 @@
+[buildPlans.iosevka-custom]
+family = "Iosevka Custom"
+spacing = "normal"
+serifs = "sans"
+no-cv-ss = true
+
+  [buildPlans.iosevka-custom.variants]
+  inherits = "ss05"
+
+    [buildPlans.iosevka-custom.variants.design]
+    capital-a = "curly-serifless"
+    capital-b = "more-asymmetric-serifless"
+    capital-c = "unilateral-inward-serifed"
+    capital-d = "standard-serifless"
+    capital-e = "top-left-serifed"
+    capital-k = "straight-bottom-right-serifed"
+    capital-v = "curly"
+    a = "double-storey-serifless"
+    b = "toothless-rounded"
+    c = "bilateral-inward-serifed"
+    d = "toothless-corner-serifless"
+    e = "rounded"
+    f = "diagonal-tailed"
+    j = "diagonal-tailed-serifed"
+    k = "diagonal-tailed-cursive-serifless"
+    l = "serifed-diagonal-tailed"
+    t = "diagonal-tailed-short-neck"
+    x = "curly-serifless"
+    z = "curly-serifless"
+    lower-delta = "flat-top"
+    lower-lambda = "curly"
+    lower-mu = "tailed"
+    lower-xi = "rounded"
+    two = "curly-neck"
+    five = "oblique-upper-left-bar"
+
+  [buildPlans.iosevka-custom.ligations]
+  inherits = "dlig"
