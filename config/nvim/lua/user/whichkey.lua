@@ -79,6 +79,7 @@ local opts = {
 }
 
 local mappings = {
+	["H"] = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "See highlight group" },
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["b"] = {
 		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -95,6 +96,7 @@ local mappings = {
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+	["x"] = { "<cmd>Telescope flutter commands<cr>", "Flutter" },
 
 	p = {
 		name = "Packer",

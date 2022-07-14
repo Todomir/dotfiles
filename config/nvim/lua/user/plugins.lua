@@ -59,26 +59,18 @@ return packer.startup(function(use)
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 	use({ "stevearc/dressing.nvim", event = "BufReadPre" })
-	use({
-		"mg979/vim-visual-multi",
-		branch = "master",
-		config = function()
-			vim.api.nvim_exec(
-				[[
-        let g:VM_maps = {}
-        let g:VM_default_mappings = 0
-        let g:VM_maps["Undo"] = 'u'
-        let g:VM_maps["Redo"] = '<C-r>'
-      ]],
-				false
-			)
-		end,
-	})
+	-- use({
+	-- 	"m-demare/hlargs.nvim",
+	-- 	requires = { "nvim-treesitter/nvim-treesitter" },
+	-- })
 
 	-- Colorschemes
-	-- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
 	use("folke/tokyonight.nvim")
-  use("haishanh/night-owl.vim")
+	use("olimorris/onedark.nvim")
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+	})
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -87,17 +79,8 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
-	use({
-		"github/copilot.vim",
-		config = function()
-			vim.g.copilot_assume_mapped = true
-			vim.g.copilot_no_tab_map = true
-			vim.g.copilot_tab_fallback = ""
-		end,
-	}) -- github copilot
-	use({
-		"hrsh7th/cmp-copilot",
-	})
+	use("github/copilot.vim") -- github copilot
+
 	use({
 		"tzachar/cmp-tabnine",
 		run = "./install.sh",
@@ -130,7 +113,6 @@ return packer.startup(function(use)
 		requires = "nvim-lua/plenary.nvim",
 	}) -- extra utils for typescript development
 
-	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 
 	-- Treesitter
@@ -139,8 +121,16 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("nvim-treesitter/nvim-treesitter-textobjects")
+	use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("p00f/nvim-ts-rainbow")
+	use({
+		"norcalli/nvim-colorizer.lua",
+		cmd = "ColorizerToggle",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
@@ -181,6 +171,21 @@ return packer.startup(function(use)
 
 	use("nathom/filetype.nvim")
 	use("tpope/vim-surround")
+
+	-- workspaces
+	use("metakirby5/codi.vim")
+
+	-- misc
+	use("psliwka/termcolors.nvim")
+
+	-- Flutter
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("user.flutter").setup()
+		end,
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
