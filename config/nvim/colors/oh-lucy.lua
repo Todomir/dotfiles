@@ -1,4 +1,4 @@
-vim.g.colors_name = "karma"
+vim.g.colors_name = "oh-lucy"
 
 local pallete = {
 	Purple = "#AE75FF",
@@ -10,7 +10,7 @@ local pallete = {
 	Green = "#7BD88F",
 	Cyan = "#8BE9FD",
 	Blue = "#51C7DA",
-	Black = "#0A0E13",
+	Black = "#1A1D26",
 	Blackish = "#24272B",
 	Gray = "#88898F",
 	White = "#F8F8F2",

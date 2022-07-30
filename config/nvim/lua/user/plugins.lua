@@ -46,7 +46,10 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
-	use("kyazdani42/nvim-web-devicons")
+	use({
+		"yamatsum/nvim-nonicons",
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
@@ -59,12 +62,21 @@ return packer.startup(function(use)
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 	use({ "stevearc/dressing.nvim", event = "BufReadPre" })
-	-- use({
-	-- 	"m-demare/hlargs.nvim",
-	-- 	requires = { "nvim-treesitter/nvim-treesitter" },
-	-- })
-
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		module = { "refactoring", "telescope" },
+		keys = { [[<leader>r]] },
+		wants = { "telescope.nvim" },
+		config = function()
+			require("refactoring").setup({})
+		end,
+	})
+	use({
+		"m-demare/hlargs.nvim",
+		requires = { "nvim-treesitter/nvim-treesitter" },
+	})
 	-- Colorschemes
+	use("rktjmp/lush.nvim")
 	use("folke/tokyonight.nvim")
 	use("olimorris/onedark.nvim")
 	use({

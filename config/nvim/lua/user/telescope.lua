@@ -6,9 +6,9 @@ end
 local actions = require("telescope.actions")
 
 telescope.load_extension("flutter")
+
 telescope.setup({
 	defaults = {
-
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },

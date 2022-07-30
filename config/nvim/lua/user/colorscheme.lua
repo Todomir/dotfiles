@@ -2,7 +2,7 @@ vim.o.background = "dark"
 
 vim.cmd([[
 try
-  colorscheme karma
+  colorscheme oh-lucy
 
   if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
